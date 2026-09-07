@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink-50: #f6f7f9;
+  --color-ink-100: #eceef2;
+  --color-ink-200: #d4d8e0;
+  --color-ink-400: #8b93a5;
+  --color-ink-600: #4b5468;
+  --color-ink-800: #232a3a;
+  --color-ink-900: #141926;
+}
+
+/*
+ * Respect the OS-level reduced-motion preference rather than animating
+ * unconditionally. Cheap to honour and it matters for the audience.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* A single visible focus treatment, so keyboard users never lose their place. */
+:focus-visible {
+  outline: 2px solid var(--color-ink-900);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+body {
+  @apply bg-ink-50 text-ink-900 antialiased;
+}
+
+.btn-primary {
+  @apply rounded-md bg-ink-900 px-3 py-2 text-sm font-medium text-white hover:bg-ink-800 disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.btn-secondary {
+  @apply rounded-md border border-ink-200 bg-white px-3 py-2 text-sm font-medium text-ink-800 hover:bg-ink-100 disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.btn-danger {
+  @apply rounded-md border border-red-300 bg-white px-3 py-2 text-sm font-medium text-red-800 hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.field {
+  @apply mt-1 w-full rounded-md border border-ink-200 bg-white px-3 py-2;
+}

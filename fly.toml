@@ -1,0 +1,20 @@
+# fly.toml is a starting point for the API service.
+# Launch sibling apps for `ai` and `web` from their Dockerfiles.
+
+app = 'itemforge-api'
+primary_region = 'sea'
+
+[build]
+  dockerfile = 'apps/api/Dockerfile'
+
+[env]
+  NODE_ENV = 'production'
+  DB_DIALECT = 'postgres'
+  API_PORT = '4000'
+
+[http_service]
+  internal_port = 4000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0

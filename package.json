@@ -1,0 +1,29 @@
+{
+  "name": "itemforge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-assisted question bank platform with human-in-the-loop review",
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:api dev:web",
+    "dev:api": "npm run dev --workspace @itemforge/api",
+    "dev:web": "npm run dev --workspace @itemforge/web",
+    "dev:ai": "cd services/ai && python -m uvicorn app.main:app --reload --port 8000",
+    "build": "npm run build --workspace @itemforge/api && npm run build --workspace @itemforge/web",
+    "test": "npm run test --workspace @itemforge/api",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "db:migrate": "npm run db:migrate --workspace @itemforge/api",
+    "db:seed": "npm run db:seed --workspace @itemforge/api",
+    "db:reset": "npm run db:reset --workspace @itemforge/api"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

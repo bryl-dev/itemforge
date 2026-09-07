@@ -1,0 +1,13 @@
+node_modules
+.venv
+venv
+data
+dist
+build
+.git
+*.sqlite
+__pycache__
+.pytest_cache
+coverage
+*.log
+.env
