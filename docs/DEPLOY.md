@@ -55,4 +55,4 @@ A reviewer should be able to:
 1. Clone and run with SQLite + fixture in under five minutes, or
 2. `docker compose up` if they have Docker.
 
-A hosted URL is nicer and is the next step once a target account is available. The recorded walkthrough in `docs/DEMO.md` covers the case where neither of those is convenient.
+A hosted URL is nicer and is the next step once a Render or Fly account is wired up. The GitHub repo is https://github.com/bryl-dev/itemforge. The recorded walkthrough in `docs/DEMO.md` covers the case where a reviewer does not run it locally.

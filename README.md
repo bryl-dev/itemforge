@@ -56,6 +56,12 @@ cd services/ai && uvicorn app.main:app --reload --port 8000
 
 Open [http://localhost:5173](http://localhost:5173). The fixture provider replays recorded CPSC 210 items, so a demo cannot be broken by a missing key or a rate limit.
 
+Public repo: [github.com/bryl-dev/itemforge](https://github.com/bryl-dev/itemforge)
+
+![Review queue](docs/screenshots/review-queue.png)
+
+![Human-AI metrics](docs/screenshots/metrics.png)
+
 To use a real model, set `AI_PROVIDER=openai` and `OPENAI_API_KEY`, or `AI_PROVIDER=ollama` with a local daemon.
 
 ## What to click

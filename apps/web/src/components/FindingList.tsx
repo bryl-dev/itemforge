@@ -1,7 +1,16 @@
 import type { RubricFinding } from '../api';
 
-export function FindingList({ findings }: { findings: RubricFinding[] }) {
+export function FindingList({
+  findings,
+  mode = 'review',
+}: {
+  findings: RubricFinding[];
+  mode?: 'review' | 'bank';
+}) {
   if (findings.length === 0) {
+    if (mode === 'bank') {
+      return null;
+    }
     return (
       <p className="text-sm text-ink-600">
         Screened: no issues. This draft still needs a human decision before it enters the bank.

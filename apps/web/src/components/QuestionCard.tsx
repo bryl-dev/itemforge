@@ -69,7 +69,7 @@ export function QuestionCard({ question, mode, onChanged }: Props) {
       ) : null}
 
       <div className="mt-4">
-        <FindingList findings={question.rubricFindings} />
+        <FindingList findings={question.rubricFindings} mode={mode} />
       </div>
 
       {mode === 'review' ? (
